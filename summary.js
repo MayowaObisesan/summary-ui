@@ -34,8 +34,9 @@ function submitSummaryForm(self, evt) {
     _('.header-container > header').classList.add('transition:font-size_200ms_ease');
     _('#id-footer-container').classList.add('d-none');
 
-    const summary_api_url = `http://localhost:4500/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
-    // const summary_api_url = `http://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    // const summary_api_url = `http://localhost:5000/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    const summary_api_url = `http://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    // const summary_api_url = `http://44.202.121.157/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     const summary_fetch_init = {
         method: "GET",
         headers: {
