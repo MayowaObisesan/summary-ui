@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="assets/css/watched_eye.css">
+    <link rel="stylesheet" href="assets/css/summary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="summary.js" defer async></script>
+</head>
+<body class="relative d-block vh:h-100 vw:w-100 mg-0">
+    <section id="id-content-container" class="content-container relative flex flex-column justify-center vh:h-100 z-10">
+        <section class="floats-container abs top-0 left-0 vh:h-8 vw:w-8 lh-8 text-center z-10"><span class="fa fa-bars"></span></section>
+        <section class="header-container flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 lg:top-20 left-0 right-0 bg-white transition:font_400ms_ease-in_200ms">
+            <header class="font-36 lg:font-80 font-semibold text-center lh-normal color-27CE8E">
+                Summary
+                <span class="abs d-inline-block valign-middle fa fa-question-circle font-14"></span>
+            </header>
+        </section>
+        <section class="form-container flex justify-center align-items-center vh:h-8 pct:w-100">
+            <form action="" method="GET" id="id-search-form" class="search-form text-center pct:w-100" onsubmit="event.preventDefault(); submitSummaryForm(this, event)">
+                <input type="text" name="search-field" placeholder="Enter word, phrase or url to summarize" id="id-search-field" 
+                class="search-field outline-none border-0 border-green pct:w-88 sm:pct:w-80 md:pct:w-72 lg:pct:w-48 h-9 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x4 md:pad-x6 lg:pad-x8 radius-round bg-EEE focus:shadow:0px-0px-4px-1px-gray transition:width_400ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms">
+                <section id="id-summary-type-container">
+                    <div class="summary-type-item"></div>
+                </section>
+                <div id="id-flash-suggestions"></div>
+                <section id="id-search-suggestions-container" class="search-suggestions-container">
+                    <div></div>
+                </section>
+            </form>
+        </section>
+        <section id="id-summary-result-container" class="summary-result-container d-non pct:w-96 pct:w-100 lg:min-w-600 mg-x-auto mg-y1 bg-white-solid shadow:0px-4px-20px-0px-FFF radius overflow-y-auto vh:h-0 z-1">
+            <!-- <div id="id-summary-result-content" class="summary-result-content font-24 font-light pad-t4"></div> -->
+        </section>
+        <section id="id-summary-error-container" class="flex flex-column justify-center align-items-center"></section>
+        <section id="id-footer-container" class="footer-container fixed bottom-0 flex flex-row justify-center vh:h-8 lh-8 pct:w-100 bg-f4f4f4 font-12 z-0">
+            <a class="w-320 text-center">About</a>
+            <a class="w-320 text-center">Summary &copy; 2022</a>
+            <a class="w-320 text-center">Contact</a>
+        </section>
+    </section>
+
+    <template id="id-summary-url-template" data-summary_template_type="url">
+        <!-- SUMMARY URL CONTENT GOES HERE -->
+    </template>
+    <template id="id-summary-search-template" data-summary_template_type="search">
+        <!-- SUMMARY SEARCH CONTENT GOES HERE -->
+    </template>
+    <template id="id-summary-file-template" data-summary_template_type="file">
+        <!-- SUMMARY FILE CONTENT GOES HERE -->
+    </template>
+    <template id="id-summary-text-template" data-summary_template_type="text">
+        <!-- SUMMARY RAW TEXT CONTENT GOES HERE -->
+    </template>
+    <template id="id-summary-history-template" data-summary_template_type="history">
+        <!-- SUMMARY HISTORY CONTENT GOES HERE -->
+    </template>
+    <template id="">
+        <section>How are you?</section>
+    </template>
+    <template id="id-summary-loading-content-template">
+        <section class="flex flex-column align-items-center pct:w-100 vh:h-100">
+            <span class="fa fa-spinner fa-spin relative w-40 h-40"></span>
+            <div class="font-18 font-semibold">Loading Summary</div>
+        </section>
+    </template>
+    <template id="id-summary-result-content-template">
+        <header id="id-summary-result-title" class="font-16 font-medium pad-x2 white-space-pre"></header>
+        <span id="id-summary-result-url" class="font-12 font-regular pad-x2"></span>
+        <section id="id-summary-result-content-container">
+            <section id="id-summary-result-content" class="summary-result-content font-18 font-light pad-4"></section>
+        </section>
+    </template>
+    <template id="id-summary-error-content-template">
+        <section>
+            <span class="fa fa-ban font-18 bg-light"></span>
+            <div class="">Something went wrong</div>
+        </section>
+    </template>
+</body>
+</html>
