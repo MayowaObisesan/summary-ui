@@ -25,14 +25,18 @@ function submitSummaryForm(self, evt) {
     _('#id-summary-result-container').classList.add('vh:h-96');
     _('#id-summary-result-container').classList.add('transition:height_400ms_ease-in-out|width_200ms_ease_800ms');
     _('.header-container').classList.remove('neg:top-4');
+    _('.header-container').classList.add('lg:h-10');
     _('#id-search-field').classList.add('h-7');
+    _('#id-search-field').classList.add('md:h-8');
+    _('#id-search-field').classList.add('lg:h-9');
     _('.header-container > header').classList.add('font-24');
-    _('.header-container > header').classList.add('lg:font-40');
+    _('.header-container > header').classList.add('lg:font-36');
     _('.header-container > header').classList.add('transition:font-size_200ms_ease');
     _('#id-footer-container').classList.add('d-none');
 
-    const summary_api_url = `http://localhost:4500/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
-    // const summary_api_url = `http://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    // const summary_api_url = `http://localhost:5000/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    const summary_api_url = `http://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    // const summary_api_url = `http://44.202.121.157/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     const summary_fetch_init = {
         method: "GET",
         headers: {
