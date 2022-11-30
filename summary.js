@@ -36,7 +36,7 @@ function submitSummaryForm(self, evt) {
 
     // const summary_api_url = `http://localhost:5000/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     // const summary_api_url = `https://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
-    const summary_api_url = `https://44.202.121.157/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    const summary_api_url = `http://44.202.121.157/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     const summary_fetch_init = {
         method: "GET",
         headers: {
