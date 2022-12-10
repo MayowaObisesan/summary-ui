@@ -522,7 +522,7 @@
         top: 0%;
     }
 
-    ..lg\:min-w-600 {
+    .lg\:min-w-600 {
         min-width: 600px;
     }
 }
