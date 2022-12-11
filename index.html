@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="assets/css/watched_eye.css">
     <link rel="stylesheet" href="assets/css/summary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="summary.js" defer async></script>
+    <script type="module" src="summary.js" defer></script>
 </head>
 <body class="relative d-block vh:h-100 vw:w-100 mg-0">
     <section id="id-content-container" class="content-container relative flex flex-column justify-center vh:h-100 z-10">
-        <section class="floats-container abs top-0 left-0 vh:h-8 vw:w-8 lh-8 text-center z-11"><span class="fa fa-bars"></span></section>
+        <section class="floats-container abs top-0 left-0 lg:square-12 lg:lh-12 square-9 lh-9 text-center z-10 transition:all_200ms_ease">
+            <span class="fa fa-bars"></span>
+        </section>
+        <section id="id-float-help-container" class="abs top-0 right-0 lg:square-12 lg:lh-12 square-9 lh-9 text-center z-10 color-27CE8E transition:all_200ms_ease">
+            <span class="fa fa-question-circle font-18"></span>
+        </section>
         <section class="header-container flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 neg:lg:top-0 left-0 right-0 mg-b1 bg-transparent transition:font_400ms_ease-in_200ms">
             <header class="font-36 lg:font-60 font-semibold text-center lh-normal color-27CE8E">
                 Summary
-                <span class="abs d-inline-block valign-middle fa fa-question-circle font-14"></span>
             </header>
         </section>
         <section class="form-container flex flex-column justify-center align-items-center vh:h-16 pct:w-100">
@@ -41,14 +45,16 @@
         <section id="id-summary-result-container" class="summary-result-container d-non pct:w-96 pct:w-100 lg:min-w-600 mg-x-auto mg-y1 bg-white-solid shadow:0px-4px-20px-0px-FFF radius overflow-y-auto vh:h-0 z-1">
             <!-- <div id="id-summary-result-content" class="summary-result-content font-24 font-light pad-t4"></div> -->
         </section>
+        <section id="id-summary-about-container" class="summary-about-container fixed pct:w-100 mg-x-auto mg-y1 bg-white-solid radius overflow-y-auto vh:h-0 z-1000"></section>
         <section id="id-summary-error-container" class="flex flex-column justify-center align-items-center"></section>
         <section id="id-footer-container" class="footer-container fixed bottom-0 flex flex-row justify-center vh:h-8 lh-8 pct:w-100 bg-f2f2f2 font-12 z-0">
-            <a class="w-320 text-center font-13 font-medium">About</a>
-            <a class="w-320 text-center font-13 font-medium">Summary &copy; 2022</a>
-            <a class="w-320 text-center font-13 font-medium">Contact</a>
+            <span class="w-320 text-center font-13 font-medium" onclick="new SummaryView(this).displayAboutView()">About</span>
+            <span class="w-320 text-center font-13 font-medium">Summary &copy; 2022</span>
+            <span class="w-320 text-center font-13 font-medium">Contact</span>
         </section>
     </section>
 
+    <!-- TEMPLATES USED FOR SUMMARY ARE BELOW -->
     <template id="id-summary-url-template" data-summary_template_type="url">
         <!-- SUMMARY URL CONTENT GOES HERE -->
     </template>
@@ -94,6 +100,21 @@
         <section class="summary-error-container flex flex-column align-items-center justify-center fixed top-0 pct:w-100 vh:h-100 z-100">
             <span class="fa fa-ban font-40"></span>
             <div class="summary-error-text font-24 font-medium pad-y4">Something went wrong</div>
+        </section>
+    </template>
+    <template id="id-summary-about-content-template">
+        <section class="summary-about-content-container pad-4 font-15 vh:h-100 overflow-y-auto">
+            <button onclick="new SummaryView(this).closeAboutView()"></button>
+            <section id="id-summary-about-header" class="summary-about-header font-21 font-bold h-8 lh-8">About Summary</section>
+            <section id="id-summary-about-body" class="summary-about-body">
+                Summary is a Service that aims to provide summary of articles, long texts and content from URLs to name a few.
+
+                <header class="font-17 font-semibold pad-t6 pad-b2">Below are some important details about Summary</header>
+                <mark>Summary is not a search-engine.</mark> Summary leverages search engines to generate and summary contents when you perform a URL summary.
+            </section>
+            <section id="id-summary-about-sticky-footer" class="sticky flex flex-row justify-center top-96 pct:w-100 h-8 lh-8 mg-x-auto text-center">
+                <button class="border-0 outline-none bg-black color-white pad-x4 radius-round font-12 font-semibold cursor-pointer hover:shadow:0px-8px-14px-1px-234|0px-0px-4px-4px-white|0px-0px-0px-8px-234 transition:all_200ms_ease" onclick="new SummaryView(this).closeAboutView()">Close About page</button>
+            </section>
         </section>
     </template>
 </body>
