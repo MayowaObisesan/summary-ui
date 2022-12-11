@@ -4,37 +4,69 @@ SUMMARY - JAVASCRIPT FILE
 NOVEMBER 9, 2022.
 */
 
+// 'use strict'
+import {_, processTemplate, StyleProcessor} from "./helpers.js";
 
-function _(selector) {
-    return document.querySelector(selector)
+window.SummaryView = class {
+    constructor(elem) {
+        this.elem = elem;
+    }
+
+    displayAboutView() {
+        const aboutContainer = _('#id-summary-about-container');
+        aboutContainer.innerHTML !== ""
+            ? new StyleProcessor('#id-summary-about-container').remove('vh:h-0').add('vh:h-100')
+            : new Promise((resolve, reject) => {
+                resolve(processTemplate('id-summary-about-content-template', 'id-summary-about-container'))
+                reject(new Error("Internal JavaScript Error occured within processTemplate function"))
+            }).then((_res) => {
+                // set the height of the about-container to 100vh.
+                // _('#id-summary-about-container').classList.remove('vh:h-0')
+                // _('#id-summary-about-container').classList.add('vh:h-100')
+                new StyleProcessor('#id-summary-about-container').remove('vh:h-0').add('vh:h-100')
+            }).catch((err) => {
+                alert(`Error occurred: ${err}`)
+            })
+    }
+
+    closeAboutView() {
+        new StyleProcessor('#id-summary-about-container').add('vh:h-0').remove('vh:h-100')
+    }
 }
 
 // Fetch the summary of the urllink
 class UrlSummary {
-    constructor() { }
+    constructor() {
+    }
 
     summarize() {
         fetch()
     }
 }
 
-function submitSummaryForm(self, evt) {
+window.submitSummaryForm = (self, evt) => {
     let summaryFormData = new FormData(document.querySelector('#id-search-form'));
     console.log(summaryFormData)
     // _('#id-summary-result-container').innerHTML = `<span class='fa fa-spinner fa-spin'></span> Loading summary`;
-    _('#id-summary-result-container').classList.add('vh:h-96');
-    _('#id-summary-result-container').classList.add('transition:height_400ms_ease-in-out|width_200ms_ease_800ms');
-    _('.header-container').classList.remove('neg:top-4');
-    _('.header-container').classList.add('lg:h-10');
-    _('#id-search-field').classList.add('h-7');
+    /*_('#id-summary-result-container').classList.add('vh:h-96');
+    _('#id-summary-result-container').classList.add('transition:height_400ms_ease-in-out|width_200ms_ease_800ms');*/
+    new StyleProcessor('#id-summary-result-container').addMany('vh:h-96 transition:height_400ms_ease-in-out|width_200ms_ease_800ms');
+    /*_('.header-container').classList.remove('neg:top-4');
+    _('.header-container').classList.add('lg:h-10');*/
+    new StyleProcessor('.header-container').remove('neg:top-4').add('lg:h-10');
+    /*_('#id-search-field').classList.add('h-7');
     _('#id-search-field').classList.add('md:h-8');
-    _('#id-search-field').classList.add('lg:h-9');
-    _('.header-container > header').classList.add('font-24');
+    _('#id-search-field').classList.add('lg:h-9');*/
+    new StyleProcessor('#id-search-field').add('h-7').add('md:h-8').add('lg:h-9');
+    /*_('.header-container > header').classList.add('font-24');
     _('.header-container > header').classList.add('lg:font-36');
-    _('.header-container > header').classList.add('transition:font-size_200ms_ease');
+    _('.header-container > header').classList.add('transition:font-size_200ms_ease');*/
+    new StyleProcessor('.header-container > header').add('font-24').add('lg:font-36').add('transition:font-size_200ms_ease');
     _('#id-footer-container').classList.add('d-none');
     setTimeout(
-        () => { processTemplate('id-summary-loading-content-template', 'id-summary-result-container') },
+        () => {
+            processTemplate('id-summary-loading-content-template', 'id-summary-result-container')
+        },
         400
     )
 
@@ -56,12 +88,15 @@ function submitSummaryForm(self, evt) {
             }
             new Promise((resolve, reject) => {
                 resolve(processTemplate('id-summary-result-content-template', 'id-summary-result-container', 'overwrite'));
-                reject(new Error("Internal JavaScript Error. Error occured within processTemplate function."));
+                reject(new Error("Internal JavaScript Error. Error occurred within processTemplate function."));
             })
                 .then((_res) => {
-                    _('.header-container').classList.add('relative');
-                    _('.header-container').classList.add('lg:top-0');
-                }).catch((err) => { console.error(err); });
+                    /*_('.header-container').classList.add('relative');
+                    _('.header-container').classList.add('lg:top-0');*/
+                    new StyleProcessor('.header-container').add('relative').add('lg:top-0');
+                }).catch((err) => {
+                console.error(err);
+            });
             self.querySelector('#id-search-field').blur();
             return response.json();
         })
@@ -85,43 +120,9 @@ function submitSummaryForm(self, evt) {
             console.error(err)
             alert(err)
             self.querySelector('#id-search-field').focus();
-            processTemplate('id-summary-error-content-template', 'id-summary-result-container', action = 'overwrite');
+            processTemplate('id-summary-error-content-template', 'id-summary-result-container', 'overwrite');
         });
-}
-
-
-function processTemplate(template_id, to_element_id, action = "overwrite") {
-    if ('content' in document.createElement('template')) {
-        try {
-            // get the template from the template_id
-            const template = document.querySelectorAll(`#${template_id}`);
-            const to_element = document.querySelectorAll(`#${to_element_id}`);
-            const action_options = ['overwrite', 'append'];
-            if (template.length < 1) {
-                throw "Template is not valid.";
-            } else if (template.length > 1) {
-                throw "Multiple template with same name found."
-            } else if (to_element.length < 1) {
-                throw "Template must be written to an existing element."
-            } else if (to_element.length > 1) {
-                throw "Template can only be written to a unique element. Multiple destination element found."
-            } else if (!action_options.includes(action)) {
-                throw "Invalid write action.";
-            }
-            const template_content = template[0].content.cloneNode(true);
-
-            if (action === "overwrite") {
-                to_element[0].innerHTML = "";
-            }
-            to_element[0].appendChild(template_content);
-        } catch (err) {
-            console.log(err);
-            alert(err);
-        }
-    } else {
-        alert("Cannot use a required feature. Kindly upgrade your browser or use a newer browser version.");
-    }
-}
+};
 
 
 {/* <body style="margin:0">
@@ -160,5 +161,6 @@ function processTemplate(template_id, to_element_id, action = "overwrite") {
         .then(result => alert(JSON.stringify(result, null, 2)))
     }, 'image/png');
   }
-</body> */}
+</body> */
+}
 

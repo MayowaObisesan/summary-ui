@@ -3,6 +3,23 @@
     color: #FFFFFF;
 }
 
+/*
+STYLING THE DEFAULT MARK ELEMENT - APRIL 30, 2022.
+COPIED FROM iTHEIRS STYLESHEET
+*/
+mark {
+  border-radius: 4px 4px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 calc(.4em);
+  margin: 0 calc(.4em / 2);
+  background: hsla(48, 95.2%, 58.8%, 1);
+  /*font-weight: bold; !* Fallback font-weight value *!*/
+  font-weight: 500; /* Fallback font-weight value */
+  font-family: "Noto-Medium", system-ui;
+}
+
+
 .header-container-sticky {}
 
 .header-container~#id-summary-result-container[class~="d-none"]>#id-summary-result-container:not(:empty) {
