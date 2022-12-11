@@ -12,34 +12,40 @@
 </head>
 <body class="relative d-block vh:h-100 vw:w-100 mg-0">
     <section id="id-content-container" class="content-container relative flex flex-column justify-center vh:h-100 z-10">
-        <section class="floats-container abs top-0 left-0 vh:h-8 vw:w-8 lh-8 text-center z-10"><span class="fa fa-bars"></span></section>
-        <section class="header-container flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 neg:lg:top-0 left-0 right-0 mg-b1 bg-white transition:font_400ms_ease-in_200ms">
-            <header class="font-36 lg:font-80 font-semibold text-center lh-normal color-27CE8E">
+        <section class="floats-container abs top-0 left-0 vh:h-8 vw:w-8 lh-8 text-center z-11"><span class="fa fa-bars"></span></section>
+        <section class="header-container flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 neg:lg:top-0 left-0 right-0 mg-b1 bg-transparent transition:font_400ms_ease-in_200ms">
+            <header class="font-36 lg:font-60 font-semibold text-center lh-normal color-27CE8E">
                 Summary
                 <span class="abs d-inline-block valign-middle fa fa-question-circle font-14"></span>
             </header>
         </section>
-        <section class="form-container flex justify-center align-items-center vh:h-8 pct:w-100">
-            <form action="" method="GET" id="id-search-form" class="search-form text-center pct:w-100" onsubmit="event.preventDefault(); submitSummaryForm(this, event)">
-                <input type="text" name="search-field" placeholder="Enter word, phrase or url to summarize" id="id-search-field" 
-                class="search-field outline-none border-0 border-green pct:w-88 sm:pct:w-80 md:pct:w-72 lg:pct:w-48 h-9 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x4 md:pad-x6 lg:pad-x8 radius-round bg-EEE focus:shadow:0px-0px-4px-1px-gray transition:width_400ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms">
-                <section id="id-summary-type-container">
-                    <div class="summary-type-item"></div>
-                </section>
+        <section class="form-container flex flex-column justify-center align-items-center vh:h-16 pct:w-100">
+            <form action="" method="GET" id="id-search-form" class="search-form flex flex-column align-items-center justify-center text-center pct:w-100 vh:h-8" onsubmit="event.preventDefault(); submitSummaryForm(this, event)">
+                <input type="text" name="search-field" placeholder="Enter word, phrase or url to summarize" id="id-search-field"
+                class="search-field outline-none border-0 border-green pct:w-88 sm:pct:w-80 md:pct:w-72 lg:pct:w-48 h-9 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x4 md:pad-x6 lg:pad-x8 radius-round bg-EEE focus:bg-green-inverse focus:shadow:0px-0px-4px-1px-white transition:width_400ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms">
                 <div id="id-flash-suggestions"></div>
+                <datalist id="summary-history-list">
+                    <option value=""></option>
+                </datalist>
                 <section id="id-search-suggestions-container" class="search-suggestions-container">
                     <div></div>
                 </section>
             </form>
+            <section id="id-summary-type-container" class="align-self-start flex align-items-center pct:w-100 vh:h-8 pad-x4">
+                <div class="summary-type-item bg-green color-white min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">URL</div>
+                <div class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">Text</div>
+                <!-- <div class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">Search</div> -->
+                <!-- <div class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">File</div> -->
+            </section>
         </section>
         <section id="id-summary-result-container" class="summary-result-container d-non pct:w-96 pct:w-100 lg:min-w-600 mg-x-auto mg-y1 bg-white-solid shadow:0px-4px-20px-0px-FFF radius overflow-y-auto vh:h-0 z-1">
             <!-- <div id="id-summary-result-content" class="summary-result-content font-24 font-light pad-t4"></div> -->
         </section>
         <section id="id-summary-error-container" class="flex flex-column justify-center align-items-center"></section>
-        <section id="id-footer-container" class="footer-container fixed bottom-0 flex flex-row justify-center vh:h-8 lh-8 pct:w-100 bg-f4f4f4 font-12 z-0">
-            <a class="w-320 text-center">About</a>
-            <a class="w-320 text-center">Summary &copy; 2022</a>
-            <a class="w-320 text-center">Contact</a>
+        <section id="id-footer-container" class="footer-container fixed bottom-0 flex flex-row justify-center vh:h-8 lh-8 pct:w-100 bg-f2f2f2 font-12 z-0">
+            <a class="w-320 text-center font-13 font-medium">About</a>
+            <a class="w-320 text-center font-13 font-medium">Summary &copy; 2022</a>
+            <a class="w-320 text-center font-13 font-medium">Contact</a>
         </section>
     </section>
 
@@ -62,22 +68,32 @@
         <section>How are you?</section>
     </template>
     <template id="id-summary-loading-content-template">
-        <section class="flex flex-column align-items-center pct:w-100 vh:h-100">
+        <section class="summary-loading-container flex flex-column align-items-center justify-center fixed top-0 pct:w-100 vh:h-100 z-100">
+            <section class="summary-logo-animation-container d-none">
+                <span class="summary-logo-animation-item d-block h-1 w-8 bg-green mg-b1 radius2-top radius-bottom-right-sm"></span>
+                <span class="summary-logo-animation-item d-block h-1 w-8 bg-green mg-b1 radius-top-right radius-bottom-left-sm"></span>
+                <span class="summary-logo-animation-item d-block h-1 w-8 bg-green radius2-bottom radius-top-left-sm"></span>
+            </section>
+            <section class="summary-loading-animation-container square-8 border-medium border-solid border-green border-b-0"></section>
+            <section class="summary-loading-text font-24 font-medium pad-y4">Loading Summary</section>
+        </section>
+
+        <!-- <section class="flex flex-column align-items-center pct:w-100 vh:h-100 bg-orange">
             <span class="fa fa-spinner fa-spin relative w-40 h-40"></span>
             <div class="font-18 font-semibold">Loading Summary</div>
-        </section>
+        </section> -->
     </template>
     <template id="id-summary-result-content-template">
         <header id="id-summary-result-title" class="font-16 font-medium pad-x2 white-space-pre"></header>
-        <span id="id-summary-result-url" class="font-12 font-regular pad-x2"></span>
+        <a href="" id="id-summary-result-url" class="font-12 font-regular pad-x2"></a>
         <section id="id-summary-result-content-container">
             <section id="id-summary-result-content" class="summary-result-content font-18 font-light pad-4"></section>
         </section>
     </template>
     <template id="id-summary-error-content-template">
-        <section>
-            <span class="fa fa-ban font-18 bg-light"></span>
-            <div class="">Something went wrong</div>
+        <section class="summary-error-container flex flex-column align-items-center justify-center fixed top-0 pct:w-100 vh:h-100 z-100">
+            <span class="fa fa-ban font-40"></span>
+            <div class="summary-error-text font-24 font-medium pad-y4">Something went wrong</div>
         </section>
     </template>
 </body>
