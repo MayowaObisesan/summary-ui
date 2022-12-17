@@ -48,12 +48,12 @@ export class StyleProcessor {
         this.elem_style = _(selector).classList
     }
 
-    remove(styles) {
+    removeClass(styles) {
         this.elem_style.remove(styles)
         return this
     }
 
-    removeMany(styles) {
+    removeManyClass(styles) {
         const styles_array = styles.split(' ')
         styles_array.forEach((each_style) => {
             this.elem_style.remove(each_style)
@@ -61,12 +61,12 @@ export class StyleProcessor {
         return this
     }
 
-    add(styles) {
+    addClass(styles) {
         this.elem_style.add(styles)
         return this
     }
 
-    addMany(styles) {
+    addManyClass(styles) {
         const styles_array = styles.split(' ')
         styles_array.forEach((each_style) => {
             this.elem_style.add(each_style)
@@ -74,7 +74,7 @@ export class StyleProcessor {
         return this
     }
 
-    toggle(styles) {
+    toggleClass(styles) {
         this.elem_style.contains(styles) ? this.elem_style.add(styles) : this.elem_style.remove(styles)
         return this
     }
