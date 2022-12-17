@@ -4,7 +4,7 @@ SUMMARY - JAVASCRIPT FILE
 NOVEMBER 9, 2022.
 */
 
-// 'use strict'
+'use strict'
 import {_, processTemplate, StyleProcessor} from "./helpers.js";
 
 window.SummaryView = class {
@@ -21,8 +21,6 @@ window.SummaryView = class {
                 reject(new Error("Internal JavaScript Error occured within processTemplate function"))
             }).then((_res) => {
                 // set the height of the about-container to 100vh.
-                // _('#id-summary-about-container').classList.remove('vh:h-0')
-                // _('#id-summary-about-container').classList.add('vh:h-100')
                 new StyleProcessor('#id-summary-about-container').removeClass('vh:h-0').addClass('vh:h-100')
             }).catch((err) => {
                 alert(`Error occurred: ${err}`)
@@ -60,7 +58,8 @@ window.submitSummaryForm = (self, evt) => {
     )
 
     // const summary_api_url = `http://localhost:5000/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
-    const summary_api_url = `https://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    // const summary_api_url = `https://summary.deta.dev/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
+    const summary_api_url = `http://143.110.168.169/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     // const summary_api_url = `http://44.202.121.157/summary?search_input=${self.querySelector('[name="search-field"]').value}`;
     const summary_fetch_init = {
         method: "GET",
@@ -80,8 +79,6 @@ window.submitSummaryForm = (self, evt) => {
                 reject(new Error("Internal JavaScript Error. Error occurred within processTemplate function."));
             })
                 .then((_res) => {
-                    /*_('.header-container').classList.add('relative');
-                    _('.header-container').classList.add('lg:top-0');*/
                     new StyleProcessor('.header-container').addClass('relative').addClass('lg:top-0');
                 }).catch((err) => {
                 console.error(err);
