@@ -15,7 +15,7 @@ window.SummaryView = class {
     displayAboutView() {
         const aboutContainer = _('#id-summary-about-container');
         aboutContainer.innerHTML !== ""
-            ? new StyleProcessor('#id-summary-about-container').remove('vh:h-0').add('vh:h-100')
+            ? new StyleProcessor('#id-summary-about-container').removeClass('vh:h-0').addClass('vh:h-100')
             : new Promise((resolve, reject) => {
                 resolve(processTemplate('id-summary-about-content-template', 'id-summary-about-container'))
                 reject(new Error("Internal JavaScript Error occured within processTemplate function"))
@@ -23,14 +23,14 @@ window.SummaryView = class {
                 // set the height of the about-container to 100vh.
                 // _('#id-summary-about-container').classList.remove('vh:h-0')
                 // _('#id-summary-about-container').classList.add('vh:h-100')
-                new StyleProcessor('#id-summary-about-container').remove('vh:h-0').add('vh:h-100')
+                new StyleProcessor('#id-summary-about-container').removeClass('vh:h-0').addClass('vh:h-100')
             }).catch((err) => {
                 alert(`Error occurred: ${err}`)
             })
     }
 
     closeAboutView() {
-        new StyleProcessor('#id-summary-about-container').add('vh:h-0').remove('vh:h-100')
+        new StyleProcessor('#id-summary-about-container').addClass('vh:h-0').removeClass('vh:h-100')
     }
 }
 
@@ -46,22 +46,11 @@ class UrlSummary {
 
 window.submitSummaryForm = (self, evt) => {
     let summaryFormData = new FormData(document.querySelector('#id-search-form'));
-    console.log(summaryFormData)
-    // _('#id-summary-result-container').innerHTML = `<span class='fa fa-spinner fa-spin'></span> Loading summary`;
-    /*_('#id-summary-result-container').classList.add('vh:h-96');
-    _('#id-summary-result-container').classList.add('transition:height_400ms_ease-in-out|width_200ms_ease_800ms');*/
-    new StyleProcessor('#id-summary-result-container').addMany('vh:h-96 transition:height_400ms_ease-in-out|width_200ms_ease_800ms');
-    /*_('.header-container').classList.remove('neg:top-4');
-    _('.header-container').classList.add('lg:h-10');*/
-    new StyleProcessor('.header-container').remove('neg:top-4').add('lg:h-10');
-    /*_('#id-search-field').classList.add('h-7');
-    _('#id-search-field').classList.add('md:h-8');
-    _('#id-search-field').classList.add('lg:h-9');*/
-    new StyleProcessor('#id-search-field').add('h-7').add('md:h-8').add('lg:h-9');
-    /*_('.header-container > header').classList.add('font-24');
-    _('.header-container > header').classList.add('lg:font-36');
-    _('.header-container > header').classList.add('transition:font-size_200ms_ease');*/
-    new StyleProcessor('.header-container > header').add('font-24').add('lg:font-36').add('transition:font-size_200ms_ease');
+    // console.log(summaryFormData)
+    new StyleProcessor('#id-summary-result-container').addManyClass('vh:h-96 transition:height_400ms_ease-in-out|width_200ms_ease_800ms');
+    new StyleProcessor('.header-container').removeClass('neg:top-4').addClass('lg:h-10');
+    new StyleProcessor('#id-search-field').addClass('h-7').addClass('md:h-8').addClass('lg:h-9');
+    new StyleProcessor('.header-container > header').addClass('font-24').addClass('lg:font-36').addClass('transition:font-size_200ms_ease');
     _('#id-footer-container').classList.add('d-none');
     setTimeout(
         () => {
@@ -93,7 +82,7 @@ window.submitSummaryForm = (self, evt) => {
                 .then((_res) => {
                     /*_('.header-container').classList.add('relative');
                     _('.header-container').classList.add('lg:top-0');*/
-                    new StyleProcessor('.header-container').add('relative').add('lg:top-0');
+                    new StyleProcessor('.header-container').addClass('relative').addClass('lg:top-0');
                 }).catch((err) => {
                 console.error(err);
             });
@@ -118,7 +107,7 @@ window.submitSummaryForm = (self, evt) => {
         })
         .catch((err) => {
             console.error(err)
-            alert(err)
+            // alert(err)
             self.querySelector('#id-search-field').focus();
             processTemplate('id-summary-error-content-template', 'id-summary-result-container', 'overwrite');
         });

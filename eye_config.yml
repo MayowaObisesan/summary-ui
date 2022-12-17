@@ -1,9 +1,9 @@
 eye:
   input_directory: "./"
-  input_extensions: "*.html,*.js"
-  #  input_exact_files: "index.html"
+  input_extensions: "*.html,helpers.js,summary.js"
+#  input_exact_files: "index.html,"
 
-  exclude_directory: ".git"
-  exclude_files: ".gitignore"
+  exclude_directory: [".git", "node_modules"]
+  exclude_files: [".gitignore"]
 
   output_name: "./assets/css/watched_eye.css"
