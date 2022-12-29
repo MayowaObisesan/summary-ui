@@ -159,7 +159,7 @@ window.SummaryForm = class {
         let summary_type = evt.submitter.getAttribute('data-summary_field_submit_type')
         console.log(summary_type)
 
-        const API_ADDRESS = "http://143.110.168.169/summary"
+        const API_ADDRESS = "https://createsummary.com/summary"
         let summary_api_address;
         if (summary_type === "url") {
             let url_input_value = this.elem.querySelector(`[name=${summary_type}_input_summary_name]`).value
