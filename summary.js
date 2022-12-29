@@ -40,6 +40,25 @@ window.SummaryView = class {
     closeAboutView() {
         new StyleProcessor('#id-summary-about-container').addClass('vh:h-0').removeClass('vh:h-100')
     }
+
+    displayContactView() {
+        const contactContainer = _('#id-summary-contact-container');
+        contactContainer.innerHTML !== ""
+            ? new StyleProcessor('#id-summary-contact-container').removeClass('vh:h-0').addClass('vh:h-100')
+            : new Promise((resolve, reject) => {
+                resolve(processTemplate('id-summary-contact-content-template', 'id-summary-contact-container'))
+                reject(new Error("Internal JavaScript Error occured within processTemplate function"))
+            }).then((_res) => {
+                // set the height of the contact-container to 100vh.
+                new StyleProcessor('#id-summary-contact-container').removeClass('vh:h-0').addClass('vh:h-100')
+            }).catch((err) => {
+                alert(`Error occurred: ${err}`)
+            })
+    }
+
+    closeContactView() {
+        new StyleProcessor('#id-summary-contact-container').addClass('vh:h-0').removeClass('vh:h-100')
+    }
 }
 
 // Fetch the summary of the urllink
