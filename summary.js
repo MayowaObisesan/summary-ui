@@ -11,6 +11,12 @@ import {EventHandler} from "./event_handler.js";
 // Call the EventHandler Class to listen for all event during the program's lifecycle loop
 new EventHandler().Listen()
 
+/*
+TODO
+December 29, 2022.
+1.  Prevent search if form is empty.
+ */
+
 window.SummaryView = class {
     constructor(elem) {
         this.elem = elem;
@@ -153,8 +159,7 @@ window.SummaryForm = class {
         let summary_type = evt.submitter.getAttribute('data-summary_field_submit_type')
         console.log(summary_type)
 
-        // const API_ADDRESS = "http://143.110.168.169/summary"
-        const API_ADDRESS = "http://127.0.0.1:5000/summary"
+        const API_ADDRESS = "http://143.110.168.169/summary"
         let summary_api_address;
         if (summary_type === "url") {
             let url_input_value = this.elem.querySelector(`[name=${summary_type}_input_summary_name]`).value
