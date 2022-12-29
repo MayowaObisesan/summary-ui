@@ -30,6 +30,18 @@ mark {
 
 .summary-loading-animation-container {
 }
+.summary-loader {
+    animation: summary_loader 2s infinite linear;
+}
+
+@keyframes summary_loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 #id-text-field:not(:focus) + button {
     /*display: none;*/

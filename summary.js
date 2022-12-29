@@ -254,6 +254,7 @@ window.SummaryForm = class {
 
             })
             .catch((err) => {
+                clearTimeout(this.summary_loading_display_timeout)
                 console.error(err)
                 // alert(err)
                 this.elem.querySelector('#id-url-field').focus();
