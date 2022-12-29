@@ -102,13 +102,15 @@
     </section>
     <section id="id-summary-about-container"
              class="summary-about-container fixed pct:w-100 mg-x-auto mg-y1 bg-white-solid radius overflow-y-auto vh:h-0 z-1000"></section>
+    <section id="id-summary-contact-container" class="summary-contact-container fixed pct:w-100 mg-x-auto mg-y1 bg-white-solid radius overflow-y-auto vh:h-0 z-1000"></section>
     <section id="id-summary-error-container" class="flex flex-column justify-center align-items-center"></section>
     <section id="id-footer-container"
              class="footer-container fixed bottom-0 flex flex-row justify-center vh:h-8 lh-8 pct:w-100 bg-f2f2f2 font-12 z-0">
         <span class="w-320 text-center font-13 font-medium cursor-pointer"
               onclick="new SummaryView(this).displayAboutView()">About</span>
         <span class="w-320 text-center font-13 font-medium cursor-pointer">Summary &copy; 2022</span>
-        <span class="w-320 text-center font-13 font-medium cursor-pointer">Contact</span>
+        <span class="w-320 text-center font-13 font-medium cursor-pointer"
+              onclick="new SummaryView(this).displayContactView()">Contact</span>
     </section>
 </section>
 
@@ -173,7 +175,7 @@
 </template>
 <template id="id-summary-about-content-template">
     <section class="summary-about-content-container pad-4 font-15 vh:h-100 overflow-y-auto">
-        <button id="id-summary-close-button"
+        <button id="id-summary-about-close-button"
                 class="abs top-0 right-0 d-block square-7 lg:square-9 border-0 radius-circle bg-2341 hover:scale-0.8 transition:all_200ms_ease_80ms"
                 onclick="new SummaryView(this).closeAboutView()">
             <span class="fa fa-times d-inline-block v-align-middle square-4 lh-4 lg:square-6 lg:lh-6 bg-black color-white radius-circle font-semibold cursor-pointer font-16 lg:font-20"></span>
@@ -190,95 +192,33 @@
         </section>
         <section id="id-summary-about-sticky-footer"
                  class="sticky flex flex-row justify-center top-96 pct:w-100 h-8 lh-8 mg-x-auto text-center">
-            <label for="id-summary-close-button"
+            <label for="id-summary-about-close-button"
                    class="border-0 outline-none bg-black color-white pad-x4 radius-round font-12 font-semibold cursor-pointer hover:pad-x12 hover:shadow:0px-8px-14px-1px-234|0px-0px-4px-4px-white|0px-0px-0px-8px-2342 transition:padding_400ms_ease|box-shadow_200ms_ease_400ms">Close
                 About page</label>
         </section>
     </section>
 </template>
-<template>
-<!--    Use the Privacy Policy in the below link as an example for the Privacy Policy.-->
-<!--    https://plentytechjobs.africa/Home/PrivacyPolicy-->
-    <section>
-        Privacy Policy
-        General data protection regulation.
-        WELCOME TO PLENTYTECHJOBS.AFRICA, AFRICA’S NO 1 TECH RECRUITMENT PLATFORM. PLEASE READ OUR PRIVACY POLICY BEFORE
-        PROCEEDING TO USE OUR SITE.
-        This Privacy Policy is applicable to Cousant Limited (“Company”) and sets out our policy on the gathering and
-        use of information on the PlentyTechJobs.africa (“Site”) website. The Company is committed to providing a safe
-        website and app for visitors of all ages and has implemented this Privacy Policy to demonstrate our firm
-        commitment to your privacy. The Company complies with the Data Privacy and Data Protection Law in Nigeria under
-        the NITDA Act.
-        Please note that this Privacy Policy applies only to the PlentyTechJobs.africa site and not to websites of other
-        companies or organizations to which our Site may be linked. You must check on any linked sites for the privacy
-        policy that applies to that site and/or make any necessary inquiries in respect of that privacy policy with the
-        operator of the linked site. The Company is not responsible for these linked websites.
-        You are required to register to access our Site, you may be asked to provide us with personal information when
-        you visit certain sections of our Site. Your use of our Sites signifies your acknowledgment and consent to our
-        Privacy Policy. If you do not agree to this Privacy Policy, please do not continue to use our Sites. Your
-        continued use of the Sites signifies your acceptance of these terms and any changes in effect at the time of
-        use.
-
-        COLLECTION OF PERSONAL INFORMATION
-
-        Personal Information is information about you that identifies you as an individual, for example, your name,
-        resume, e-mail address, or telephone number.
-        We collect information that you voluntarily provide to us through responses to register on the Site, surveys,
-        search functions, questionnaires, feedback, and the like.
-
-        HOW DOES THE COMPANY USE INFORMATION GATHERED ABOUT ONLINE VISITORS?
-
-        Before signing up and providing us with any personal information, please be advised that any information
-        gathered on our Site may be used in the aggregate for research and development relating to our Site and/or for
-        future site development, We may use information gathered about you for the following purposes: to share
-        candidate profiles to include name, email, resume with employers for the purpose of recruitment opportunities;
-        to share training course registration details including name, email, phone number with relevant the training
-        providers; to monitor interest in our features/product and to assist us to tailor the content of our Site to
-        your needs by collecting information about your preferences through tracking of patterns page views on our Site;
-        to send you job opportunities that might be of interest/beneficial to you; also to send you information about
-        us, newsletters and promotional material about our webinars and training courses available from time to time.
-
-        PROMOTIONAL AND INFORMATIONAL OFFERS
-
-        With the permission of an online visitor, information submitted at the time of registration or submission may be
-        used for marketing and promotional purposes by the Company provided notice of this fact is made available
-        online. If a visitor objects to such use for any reason, he/she may prevent that use, either by e-mail request
-        or by modifying the registration information provided. The Company uses reasonable efforts to maintain visitors'
-        information in a secure environment. If you have submitted personal information and want to change it or
-        unsubscribe, please contact us as described below.
-
-        COOKIES
-
-        The Company, in common with many website operators, may use standard technology called “cookies” on its Sites.
-        Cookies are small data files that are downloaded onto your computer when you visit a particular website. You can
-        disable cookies by turning them off in your browser; however, some areas of the Site may not function properly
-        if you do so.
-
-        PROTECTION OF INFORMATION:
-
-        Our Commitment to Security
-        We have put in place physical, electronic, and managerial procedures to safeguard and help prevent unauthorized
-        access, maintain data security, and correctly use the information we collect online. The Company applies
-        security safeguards appropriate to the sensitivity of the information, such as retaining information in secure
-        facilities and making personal information accessible only to authorized employees and clients on a need-to-know
-        basis.
-
-        Storage of Information
-        The personal information you share with us is stored securely on our private database servers at data centers
-        located in Europe, hosted by third parties who have entered into agreements with us that require them to adhere
-        to global standards in data security and privacy.
-
-        POLICY CHANGE:
-
-        If we alter our Privacy Policy, any changes will be posted on this page of our Site so that you are always
-        informed of the information we collect about you, how we use it, and the circumstances under which we may
-        disclose it.
-
-        ACCEPTANCE OF OUR PRIVACY POLICY:
-
-        By using this Site, you signify your acceptance of our Privacy Policy, and you adhere to the terms and
-        conditions posted on the Site. By submitting your information, you agree that it will be governed by our Privacy
-        Policy.
+<template id="id-summary-contact-content-template">
+    <section class="summary-contact-content-container pad-4 font-15 vh:h-100 overflow-y-auto">
+        <button id="id-summary-contact-close-button"
+                class="abs top-0 right-0 d-block square-7 lg:square-9 border-0 radius-circle bg-2341 hover:scale-0.8 transition:all_200ms_ease_80ms"
+                onclick="new SummaryView(this).closeContactView()">
+            <span class="fa fa-times d-inline-block v-align-middle square-4 lh-4 lg:square-6 lg:lh-6 bg-black color-white radius-circle font-semibold cursor-pointer font-16 lg:font-20"></span>
+        </button>
+        <section id="id-summary-contact-header" class="summary-contact-header font-21 font-bold h-8 lh-8">Contact 👋</section>
+        <section id="id-summary-contact-body" class="summary-contact-body pad-y4">
+            <header class="font-16 h-8">
+                For enquiries and other details;
+            </header>
+            <div>Email: <a href="mailto:summary.create@gmail.com" class="h-8 lh-8 color-black font-bold">Summary official email</a></div>
+            <div class="">Dial: <a href="tel:+2348087989548" class="h-8 lh-8 color-black font-bold">(+234) 808 798 9548</a></div>
+        </section>
+        <section id="id-summary-contact-sticky-footer"
+                 class="sticky flex flex-row justify-center top-96 pct:w-100 h-8 lh-8 mg-x-auto text-center">
+            <label for="id-summary-contact-close-button"
+                   class="border-0 outline-none bg-black color-white pad-x4 radius-round font-12 font-semibold cursor-pointer hover:pad-x12 hover:shadow:0px-8px-14px-1px-234|0px-0px-4px-4px-white|0px-0px-0px-8px-2342 transition:padding_400ms_ease|box-shadow_200ms_ease_400ms">
+                Close Contact page</label>
+        </section>
     </section>
 </template>
 </body>
