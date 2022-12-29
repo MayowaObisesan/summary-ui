@@ -30,3 +30,7 @@ mark {
 
 .summary-loading-animation-container {
 }
+
+#id-text-field:not(:focus) + button {
+    /*display: none;*/
+}
