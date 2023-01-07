@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="assets/css/watched_eye.css"/>
     <link rel="stylesheet" href="assets/css/summary.css"/>
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:100,200,300,300i,400,400i,500,500i,600,600i,700,700i"/>-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script type="module" src="summary.js" defer charset="UTF-8"></script>
     <script type="module" src="components/create_summary.js" defer charset="UTF-8"></script>
     <style>
@@ -28,29 +31,29 @@
 <section id="id-content-container"
          class="content-container relative flex flex-column justify-center vh:h-100 z-10 bg-inherit">
     <section
-            class="floats-container abs top-0 left-0 lg:square-12 lg:lh-12 square-9 lh-9 text-center z-101 transition:all_200ms_ease">
+            class="floats-container abs top-0 left-0 lg:square-11 lg:lh-11 square-9 lh-9 text-center z-101 transition:all_200ms_ease">
         <span class="fa fa-bars"></span>
     </section>
     <section id="id-float-help-container"
-             class="abs top-0 right-0 lg:square-12 lg:lh-12 square-9 lh-9 text-center z-101 color-27CE8E transition:all_200ms_ease">
+             class="abs top-0 right-0 lg:square-11 lg:lh-11 square-9 lh-9 text-center z-101 color-27CE8E transition:all_200ms_ease">
         <span class="fa fa-question-circle font-18"></span>
     </section>
-    <section id="id-form-content-container" class="z-100">
-        <section class="header-container flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 neg:lg:top-0 left-0 right-0 mg-b1 bg-transparent transition:font_400ms_ease-in_200ms">
-            <header class="font-36 lg:font-60 font-semibold text-center lh-normal color-27CE8E">
+    <section id="id-form-content-container" class="z-100 lg:flex lg:flex-row lg:justify-between lg:align-items-start lg:flex-wrap lg:w-800 lg:mg-x-auto">
+        <section class="header-container lg:pct:w-32 flex justify-center align-items-center vh:h-8 vw:w-100 mg-x-auto relative neg:top-4 neg:lg:top-0 left-0 right-0 mg-b1 bg-transparent transition:font_400ms_ease-in_200ms">
+            <header class="font-36 lg:font-48 font-semibold text-center lh-normal color-27CE8E">
                 Summary
             </header>
         </section>
-        <section class="form-container flex flex-column justify-center align-items-center pct:w-100 bg-inherit">
+        <section id="id-form-container" class="form-container lg:flex lg:flex-ro lg:justify-start flex flex-column justify-center align-items-center pct:w-100 bg-inherit">
             <form action="" method="GET" id="id-summary-form"
                   class="search-form relative flex flex-column align-items-center justify-center text-center pct:w-100 vh:h-8"
                   onsubmit="event.preventDefault(); new SummaryForm(this).submitForm(event)">
                 <section id="id-url-field-container"
-                         class="url-field-container relative flex flex-row justify-center align-items-center outline-none border-0 pct:w-90 sm:pct:w-80 md:pct:w-72 lg:pct:w-48 bg-27CE6234 radius2 pad-x2 focus-within:pct:w-96 transition:all_200ms_ease"
+                         class="url-field-container relative flex flex-row justify-center align-items-center outline-none border-0 pct:w-90 sm:pct:w-80 md:pct:w-90 lg:pct:w-96 bg-27CE6234 radius2 pad-x2 focus-within:pct:w-96 lg:focus-within:pct:w-96 transition:all_200ms_ease"
                          data-summary_field_input="url">
                     <input type="text" name="url_input_summary_name" placeholder="Type or paste url to summarize"
                            id="id-url-field"
-                           class="url-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x6 lg:pad-x8 radius-round bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease">
+                           class="url-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x2 lg:pad-x3 radius-round bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease">
                     <label for="id-url-field-submit-button"
                            class="relative flex justify-center align-items-center h-48 w-72 bg-27CE8E radius-round cursor-pointer">
                         <span class="fa fa-search color-white"></span>
@@ -59,21 +62,87 @@
                     </label>
                 </section>
                 <section id="id-text-field-container"
-                         class="text-field-container abs top-0 pct:w-88 sm:pct:w-80 md:pct:w-72 lg:pct:w-48 d-none bg-EEE radius2 vh:h-8 focus-within:vh:h-40 transition:height_400ms_ease overflow-y-hidden z-100"
+                         class="text-field-container abs top-0 pct:w-88 sm:pct:w-80 md:pct:w-90 lg:pct:w-96 d-none bg-EEE radius2 vh:h-8 focus-within:vh:h-40 transition:height_400ms_ease overflow-y-hidden z-100"
                          data-summary_field_input="text">
-                <textarea name="text_input_summary_name" placeholder="Paste text to summarize" id="id-text-field"
+                    <textarea name="text_input_summary_name" placeholder="Paste text to summarize" id="id-text-field"
                           class="relative bg-yellow top-0 left-0 right-0 outline-none border-0 pct:w-100 vh:h-8 font-regular font-16 lg:font-18 pad-x4 pad-t3 md:pad-x6 lg:pad-x8 radius2 bg-EEE focus:vh:h-34 focus:radius2 focus:pad-6 focus:bg-EEE transition:width_400ms_ease|height_400ms_ease|padding_200ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms"></textarea>
                     <div class="relative d-block bg-27CE6234 radius-bottom-left-sm radius-bottom-right-sm vh:h-6 lh-7">
                         <label for="id-text-field-submit-button"
                                class="relative d-inline-block left-36 pad-x4 h-6 lh-6 border-0 bg-27CE8E color-white radius2-smt font-12 font-semibold cursor-pointer">
-                            Proceed
+                            Summarize
                             <button type="submit" id="id-text-field-submit-button"
                                     class="relative d-block h-0 lh-0 w-0 pad-0 d-none"
                                     data-summary_field_submit_type="text"></button>
                         </label>
                     </div>
                 </section>
-                <div id="id-flash-suggestions"></div>
+                <section id="id-search-field-container"
+                         class="search-field-container abs flex flex-row justify-center align-items-center d-none outline-none border-0 pct:w-90 sm:pct:w-80 md:pct:w-90 lg:pct:w-96 bg-27CE6234 radius2 pad-r2 focus-within:pct:w-96 lg:focus-within:pct:w-96 transition:all_200ms_ease"
+                         data-summary_field_input="search">
+                    <span class="w-88 bg-FFFFFF44 text-right align-self-stretch flex flex-row align-items-center justify-center cursor-pointer radius2-top-left radius2-bottom-left transition:width_200ms_ease">
+                        <img src="assets/images/google_logo.png" alt="" class="square-4 radius-circle">
+                    </span>
+                    <div class="search-engine-list abs flex flex-row top-100 left-0 bg-white-solid border-lightgray border-thin border-solid mg-t2 radius2 d-none">
+                        <span class="search-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer radius2-top-left radius2-bottom-left">
+                            <img src="assets/images/google_logo.png" alt="" title="Google" class="square-4 radius-circle">
+                        </span>
+                        <span class="search-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/bing_logo.png" alt="" title="Bing" class="h-3">
+                        </span>
+                        <span class="search-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/ask_logo.svg" alt="" title="Ask" class="h-3">
+                        </span>
+                        <span class="search-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/yahoo_logo_simple.png" alt="" title="Yahoo" class="h-3">
+                        </span>
+                        <span class="search-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer radius2-top-right radius2-bottom-right">
+                            <img src="assets/images/dogpile_logo.svg" alt="" title="Dogpile" class="square-4 bg-blue">
+                        </span>
+                    </div>
+                    <input type="search" name="search_input_summary_name" placeholder="Type what to summarize"
+                           id="id-search-field"
+                           class="search-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x2 lg:pad-x3 bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease">
+                    <label for="id-search-field-submit-button"
+                           class="relative flex justify-center align-items-center h-48 w-72 bg-27CE8E radius-round cursor-pointer">
+                        <span class="fa fa-search color-white"></span>
+                        <button type="submit" id="id-search-field-submit-button" class="d-none"
+                                data-summary_field_submit_type="search"></button>
+                    </label>
+                </section>
+                <section id="id-news-field-container"
+                         class="news-field-container abs flex flex-row justify-center align-items-center d-none outline-none border-0 pct:w-90 sm:pct:w-80 md:pct:w-90 lg:pct:w-96 bg-27CE6234 radius2 pad-r2 focus-within:pct:w-96 lg:focus-within:pct:w-96 transition:all_200ms_ease"
+                         data-summary_field_input="news">
+                    <span class="w-88 bg-FFFFFF44 text-right align-self-stretch flex flex-row align-items-center justify-center cursor-pointer radius2-top-left radius2-bottom-left transition:width_200ms_ease">
+                        <img src="assets/images/bing_logo.png" alt="" class="h-3">
+                    </span>
+                    <div class="news-engine-list abs flex flex-row top-100 left-0 bg-white-solid border-lightgray border-thin border-solid mg-t2 radius2 d-none">
+                        <span class="news-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer radius2-top-left radius2-bottom-left">
+                            <img src="assets/images/google_logo.png" alt="" title="Google" class="square-4 radius-circle">
+                        </span>
+                        <span class="news-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/bing_logo.png" alt="" title="Bing" class="h-3">
+                        </span>
+                        <span class="news-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/ask_logo.svg" alt="" title="Ask" class="h-3">
+                        </span>
+                        <span class="news-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer">
+                            <img src="assets/images/yahoo_logo_simple.png" alt="" title="Yahoo" class="h-3">
+                        </span>
+                        <span class="news-engine-item d-inherit justify-center align-items-center h-8 lh-8 w-8 hover:bg-lightgray cursor-pointer radius2-top-right radius2-bottom-right">
+                            <img src="assets/images/dogpile_logo.svg" alt="" title="Dogpile" class="square-4 bg-blue">
+                        </span>
+                    </div>
+                    <input type="text" name="search_input_summary_name" placeholder="Search news to summarize"
+                           id="id-news-field"
+                           class="news-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x2 lg:pad-x3 bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease">
+                    <label for="id-news-field-submit-button"
+                           class="relative flex justify-center align-items-center h-48 w-72 bg-27CE8E radius-round cursor-pointer">
+                        <span class="fa fa-search color-white"></span>
+                        <button type="submit" id="id-news-field-submit-button" class="d-none"
+                                data-summary_field_submit_type="news"></button>
+                    </label>
+                </section>
+               <div id="id-flash-suggestions"></div>
                 <datalist id="summary-history-list">
                     <option value=""></option>
                 </datalist>
@@ -82,23 +151,43 @@
                 </section>
             </form>
             <section id="id-summary-type-container"
-                     class="align-self-start flex align-items-center pct:w-100 vh:h-8 pad-x4">
+                     class="align-self-start flex flex-row lg:justify-start align-items-center pct:w-100 vh:h-8 pad-x4 lg:mg-x-auto">
                 <div data-summary_field_trigger="url"
-                     class="summary-type-item bg-light bg-27CE8E color-white min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease"
-                     onclick="new SummaryForm(this).activateURLSummaryField()">URL
+                     class="summary-type-item bg-light bg-27CE8E color-white min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease|color_100ms_ease"
+                     onclick="">URL
                 </div>
                 <div data-summary_field_trigger="text"
-                     class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease"
-                     onclick="new SummaryForm(this).activateTextSummaryField()">Text
+                     class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease|color_100ms_ease">
+                    Text
                 </div>
-                <!-- <div class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">Search</div> -->
+                 <div data-summary_field_trigger="search"
+                      class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease|color_100ms_ease"
+                      onclick="">Search
+                 </div>
+                 <!--<div data-summary_field_trigger="news"
+                      class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-27CE8E hover:color-white transition:background_200ms_ease|color_100ms_ease"
+                      onclick="">News
+                 </div>-->
                 <!-- <div class="summary-type-item min-w-72 w-auto pad-x2 h-5 lh-5 mg-x1 radius-round text-center bg-light font-medium cursor-pointer hover:bg-green hover:color-white transition:background_200ms_ease">File</div> -->
             </section>
+            <!--<section class="relative flex flex-column justify-start align-items-stretch pct:w-88 radius shadow:0px-0px-8px-1px-E4E4E4 pad-4 mg-t2">
+                <div class="relative font-11 font-medium color-gray">https://createsummary.com</div>
+                <div class="relative font-17 font-semibold h-5 lh-5">What does hi Mean?</div>
+                <div class="relative font-12">informal. a brother. mainly US informal. used when talking to a male friend: [ as form of address ] Hey, bro, what's up?28 Dec 2022</div>
+                <div class="relative d-block text-center mg-t2 align-self-end">
+                    <a href="" class="relative d-block text-center h-4 lh-4 radius bg-black pad-x2 color-white decoration-none">go to site <span class="fa fa-share"></span></a>
+                </div>
+            </section>-->
         </section>
     </section>
     <section id="id-summary-result-container"
-             class="summary-result-container d-non pct:w-96 pct:w-100 lg:min-w-600 mg-x-auto mg-y1 bg-white-solid shadow:0px-4px-20px-0px-FFF radius overflow-y-auto break-word vh:h-0 z-1">
+             class="summary-result-container flex flex-row overflow-x-auto pct:w-100 mg-x-auto lg:mg-x-unset mg-y1 lg:pad-x-120 bg-white-solid shadow:0px-4px-20px-0px-FFF radius overflow-y-auto break-word vh:h-0 z-1">
         <!-- <div id="id-summary-result-content" class="summary-result-content font-24 font-light pad-t4"></div> -->
+        <section id="id-summary-url-result-container" class="summary-type-result-container pct:h-100 bg-inherit" data-summary_result_container_type="url"></section>
+        <section id="id-summary-text-result-container" class="summary-type-result-container pct:h-100 bg-inherit" data-summary_result_container_type="text"></section>
+        <section id="id-summary-search-result-container" class="summary-type-result-container pct:h-100 bg-inherit" data-summary_result_container_type="search"></section>
+        <section id="id-summary-news-result-container" class="summary-type-result-container pct:h-100 bg-inherit" data-summary_result_container_type="news"></section>
+        <section id="id-summary-files-result-container" class="summary-type-result-container pct:h-100 bg-inherit" data-summary_result_container_type="file"></section>
     </section>
     <section id="id-summary-about-container"
              class="summary-about-container fixed pct:w-100 mg-x-auto mg-y1 bg-white-solid radius overflow-y-auto vh:h-0 z-1000"></section>
@@ -135,7 +224,7 @@
 </template>
 <template id="id-summary-loading-content-template">
     <section
-            class="summary-loading-container flex flex-column align-items-center justify-center fixed top-0 pct:w-100 vh:h-100 z-100">
+            class="summary-loading-container flex flex-column align-items-center justify-center fixed top-0 left-0 pct:w-100 vh:h-100 z-100 bg-inherit">
         <section class="summary-logo-animation-container d-none">
             <span class="summary-logo-animation-item d-block h-1 w-8 bg-green mg-b1 radius2-top radius-bottom-right-sm"></span>
             <span class="summary-logo-animation-item d-block h-1 w-8 bg-green mg-b1 radius-top-right radius-bottom-left-sm"></span>
@@ -154,22 +243,36 @@
 </template>
 <template id="id-summary-url-result-content-template">
     <header id="id-summary-url-result-title" class="font-16 font-medium pad-x2 white-space-pre text-overflow-ellipsis text-ellipsis"></header>
-    <a href="" id="id-summary-url-result-url" class="font-12 font-regular pad-x2"></a>
-    <section id="id-summary-url-result-content-container">
-        <section id="id-summary-url-result-content" class="summary-result-content font-18 font-light pad-4"></section>
+    <a href="" target="_blank" id="id-summary-url-result-url" class="font-12 font-regular pad-x2"></a>
+    <section id="id-summary-url-result-content-container" class="lg:w-800">
+        <section id="id-summary-url-result-content" class="summary-result-content font-16 font-light lh-4 pad-4"></section>
     </section>
 </template>
 <template id="id-summary-text-result-content-template">
     <!--<header id="id-summary-text-result-title" class="font-16 font-medium pad-x2 white-space-pre text-overflow-ellipsis text-ellipsis"></header>-->
     <!--<a href="" id="id-summary-text-result-url" class="font-12 font-regular pad-x2"></a>-->
-    <section id="id-summary-text-result-content-container">
+    <section id="id-summary-text-result-content-container" class="lg:w-800">
         <section id="id-summary-text-result-content" class="summary-result-content font-18 font-light pad-4"></section>
+    </section>
+</template>
+<template id="id-summary-search-result-content-template">
+    <!--<header id="id-summary-search-result-title" class="font-16 font-medium pad-x2 white-space-pre search-overflow-ellipsis search-ellipsis"></header>-->
+    <!--<a href="" id="id-summary-search-result-url" class="font-12 font-regular pad-x2"></a>-->
+    <section id="id-summary-search-result-content-container" class="lg:w-800">
+        <section id="id-summary-search-result-content" class="summary-result-content font-18 font-regular pad-2"></section>
+    </section>
+</template>
+<template id="id-summary-news-result-content-template">
+    <!--<header id="id-summary-news-result-title" class="font-16 font-medium pad-x2 white-space-pre news-overflow-ellipsis news-ellipsis"></header>-->
+    <!--<a href="" id="id-summary-news-result-url" class="font-12 font-regular pad-x2"></a>-->
+    <section id="id-summary-news-result-content-container" class="lg:w-800">
+        <section id="id-summary-news-result-content" class="summary-result-content font-18 font-regular pad-2"></section>
     </section>
 </template>
 <template id="id-summary-error-content-template">
     <section
-            class="summary-error-container flex flex-column align-items-center justify-center fixed top-0 pct:w-100 vh:h-100">
-        <span class="fa fa-ban font-40"></span>
+            class="summary-error-container flex flex-column align-items-center justify-center fixed top-0 left-0 pct:w-100 vh:h-100 bg-inherit">
+        <span class="fa fa-ban font-40 color-tomato"></span>
         <div class="summary-error-text font-24 font-medium pad-y4">Something went wrong</div>
     </section>
 </template>

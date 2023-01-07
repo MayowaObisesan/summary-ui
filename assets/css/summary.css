@@ -1,3 +1,7 @@
+* {
+    font-family: "Mukta Malar", sans-serif;
+}
+
 ::selection {
     background: #27CE8E;
     color: #FFFFFF;
@@ -19,14 +23,35 @@ mark {
     font-family: "Noto-Medium", system-ui;
 }
 
+/*
+Remove auto-complete color - Copied from StackOverflow
+https://stackoverflow.com/questions/29580704/change-input-background-to-transparent-on-autocomplete-form
+January 6, 2022.
+*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 9999s ease-in-out 0s;
+    background-color: whitesmoke;
+    -webkit-text-fill-color: #000 !important;
+    caret-color: #27CE8E;
+}
+
+/*input:-internal-autofill-selected {
+    color: transparent !important;
+}*/
+input:-internal-input-selected {
+    color: white !important;
+}
 
 .header-container-sticky {
 }
 
-.header-container ~ #id-summary-result-container[class~="d-none"] > #id-summary-result-container:not(:empty) {
-    border: 4px solid orange;
-    display: block;
-}
+/*.header-container ~ #id-summary-result-container[class~="d-none"] > #id-summary-result-container:not(:empty) {*/
+/*    border: 4px solid orange;*/
+/*    display: block;*/
+/*}*/
 
 .summary-loading-animation-container {
 }

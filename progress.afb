@@ -23,3 +23,20 @@ Consider the below markup.
 If I click the button, there is a bubbling to the parent-containers, but the button itself does not get triggered.
 What I mean is: the alert on the button will not trigger, but the "alerts" on the parent-containers "up-till" the form
 container will be triggered.
+
+
+DECEMBER 29, 2022.
+14:05pm
+1.  Summary API deployed on https://createsummary.com
+2.  Summary View deployed on https://createsummary.com - In Progress
+3.  Shared to My sisters to view.
+
+
+JANUARY 7, 2022.
+00:54am
+1.  Completed Search summary type. #DONE
+2.  Made summary responsive with varying desktop, tablet and mobile views. Working as intended. #DONE
+3.  Agreed to use ask.com search engine for search summary. #DONE
+4.  Initialized and Tested News summary type, but not added yet. #InProgress
+5.  Will use bing news for summary news.
+Thank you JESUS.
