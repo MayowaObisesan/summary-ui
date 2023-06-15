@@ -45,15 +45,19 @@
             </header>
         </section>
         <section id="id-form-container" class="form-container lg:flex lg:flex-ro lg:justify-start flex flex-column justify-center align-items-center pct:w-100 bg-inherit">
+            <!--<section class="abs top-0 w-600 pad-4 radius bg-light parent-cont hover:bg-green">
+                <div class="icon square-4 bg-black hover:child-cont:bg-white"></div>
+                <div class="letters font-16 hover:child-cont:color-white|bg-orange">Parent - Child EYE CSS test</div>
+            </section>-->
             <form action="" method="GET" id="id-summary-form"
-                  class="search-form relative flex flex-column align-items-center justify-center text-center pct:w-100 vh:h-8"
+                  class="search-form relative flex flex-column align-items-center justify-center text-center pct:w-100 vh:h-8 outline:4px_solid_green outline-offset-4"
                   onsubmit="event.preventDefault(); new SummaryForm(this).submitForm(event)">
                 <section id="id-url-field-container"
                          class="url-field-container relative flex flex-row justify-center align-items-center outline-none border-0 pct:w-90 sm:pct:w-80 md:pct:w-90 lg:pct:w-96 bg-27CE6234 radius2 pad-x2 focus-within:pct:w-96 lg:focus-within:pct:w-96 transition:all_200ms_ease"
                          data-summary_field_input="url">
                     <input type="text" name="url_input_summary_name" placeholder="Type or paste url to summarize"
                            id="id-url-field"
-                           class="url-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x2 lg:pad-x3 radius-round bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease">
+                           class="url-field outline-none border-0 pct:w-100 vh:h-8 md:h-10 lg:h-12 font-regular font-16 lg:font-18 pad-x2 md:pad-x2 lg:pad-x3 radius-round bg-EE bg-transparent focus:shadow:0px-0px-0px-0px-white transition:width_400ms_ease|border-radius_200ms_ease|box-shadow_200ms_ease-in_200ms|background_200ms_ease_200ms|all_200ms_ease placeholder:font-bold placeholder:font-italic|color-purple">
                     <label for="id-url-field-submit-button"
                            class="relative flex justify-center align-items-center h-48 w-72 bg-27CE8E radius-round cursor-pointer">
                         <span class="fa fa-search color-white"></span>

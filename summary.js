@@ -206,7 +206,8 @@ window.SummaryForm = class {
         console.log(summary_type)
         this.initSummaryQuery()
 
-        const API_ADDRESS = "https://api.createsummary.com/summary"
+        // const API_ADDRESS = "https://api.createsummary.com/summary"
+        const API_ADDRESS = "http://localhost:5000/summary"
         let summary_api_address;
         if (summary_type === "url") {
             let url_input_value = this.elem.querySelector(`[name=${summary_type}_input_summary_name]`).value
