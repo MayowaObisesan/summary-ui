@@ -6,7 +6,7 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; /* | grayscale*/
-    font-family: "system-ui"
+    /* font-family: "system-ui" */
 }
 
 *::-webkit-scrollbar {
@@ -144,6 +144,27 @@
     width: 100%;
 }
 
+.pad-4 {
+    padding: 32px;
+}
+
+.radius {
+    border-radius: 8px;
+}
+
+.square-4 {
+    width: 32px;
+    height: 32px;
+}
+
+.bg-black {
+    background-color: hsla(0, 0%, 0%, 1);
+}
+
+.font-16 {
+    font-size: 1.33rem;
+}
+
 .flex-row {
     flex-direction: row;
 }
@@ -171,10 +192,6 @@
 
 .font-regular {
     font-weight: 400;
-}
-
-.font-16 {
-    font-size: 1.33rem;
 }
 
 .radius-round {
@@ -282,11 +299,6 @@
     border-bottom-left-radius: 16px;
 }
 
-.square-4 {
-    width: 32px;
-    height: 32px;
-}
-
 .radius-circle {
     border-radius: 50% 50%;
 }
@@ -380,14 +392,6 @@
     align-items: stretch;
 }
 
-.radius {
-    border-radius: 8px;
-}
-
-.pad-4 {
-    padding: 32px;
-}
-
 .font-11 {
     font-size: 0.91rem;
 }
@@ -410,10 +414,6 @@
 
 .lh-4 {
     line-height: 32px;
-}
-
-.bg-black {
-    background-color: hsla(0, 0%, 0%, 1);
 }
 
 .decoration-none {
@@ -621,6 +621,14 @@
     line-height: 24px;
 }
 
+.hover\:bg-green:hover {
+    background-color: hsla(120, 76.5%, 33.3%, 0.7);
+}
+
+.parent-cont:hover .hover\:child-cont\:bg-white {
+    background-color: hsla(0, 0%, 100%, .9);
+}
+
 .focus-within\:pct\:w-96:focus-within {
     width: 96%;
 }
@@ -641,10 +649,6 @@
     color: hsla(0, 0%, 100%, .9);
 }
 
-.hover\:bg-green:hover {
-    background-color: hsla(120, 76.5%, 33.3%, 0.7);
-}
-
 .hover\:pad-x12:hover {
     padding-left: 96px;
     padding-right: 96px;
@@ -660,6 +664,10 @@
 
 .hover\:decoration-3:hover {
     text-decoration-thickness: 3px;
+}
+
+.placeholder\:font-bold::placeholder {
+    font-weight: 700;
 }
 
 .vh\:h-100 {
@@ -688,6 +696,18 @@
 
 .transition\:font_400ms_ease-in_200ms {
     transition: font 400ms ease-in 200ms;
+}
+
+.w-600 {
+    width: 600px;
+}
+
+.outline\:4px_solid_green {
+    outline: 4px solid green;
+}
+
+.outline-offset-4 {
+    outline-offset: 4px;
 }
 
 .bg-27CE6234 {
@@ -854,6 +874,10 @@
     transition: width 400ms ease 400ms;
 }
 
+.border\:1px {
+    border: 1px;
+}
+
 .focus\:shadow\:0px-0px-0px-0px-white:focus {
     box-shadow: 0px 0px 0px 0px white;
 }
@@ -880,6 +904,11 @@
 
 .hover\:shadow\:0px-8px-14px-1px-234\|0px-0px-4px-4px-white\|0px-0px-0px-8px-2342:hover {
     box-shadow: 0px 8px 14px 1px #234, 0px 0px 4px 4px white, 0px 0px 0px 8px #2342;
+}
+
+.placeholder\:font-italic\|color-purple::placeholder {
+    font-style: italic;
+    color: hsla(278, 100%, 19.2%, 0.9)
 }
 
 @media (min-width: 640px) {
